@@ -15,6 +15,25 @@
 */
 
 .page {
+  font-family: var(--content-font-variable), Arial, Helvetica, sans-serif;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--accent-color);
+  background: var(--header-background-color);
+  background-attachment: fixed;
+}
+
+.floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.header {
+  min-block-size: 667px;
+  block-size: 100%;
+}
+
+.header__block-content {
+  min-block-size: 323px;
+  block-size: 100%;
 }
