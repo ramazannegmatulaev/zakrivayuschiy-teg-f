@@ -7,25 +7,68 @@
 
 :root.theme-dark {
   --content-title-weight: 800;
-  --accent-color: #00CC14;
-  --header-background-color: linear-gradient(180.00deg, rgb(0, 127, 12),rgb(0, 67, 6) 100%);
+  --accent-color: #00cc14;
+  --accent-background-color: #000;
+  --content-text-shadow: #000;
+  --background-gradient-color: repeating-linear-gradient(
+      to bottom,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to right,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#007f0c, #004306);
 }
 
 :root.theme-light {
   --content-title-weight: 700;
   --accent-color: #000;
-  --header-background-color: linear-gradient(
-    180deg,
-    rgb(231, 231, 231),
-    rgb(26, 26, 26) 100%
-  );
+  --accent-background-color: #fff;
+  --content-text-shadow: #fff;
+  --background-gradient-color: repeating-linear-gradient(
+      to bottom,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 }
 
-
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --content-title-weight: 800;
-    --accent-color: #00CC14;
-    --header-background-color: linear-gradient(180.00deg, rgb(0, 127, 12),rgb(0, 67, 6) 100%);
+    --content-text-shadow: #000;
+    --accent-color: #00cc14;
+    --accent-background-color: #000;
+    --background-gradient-color: repeating-linear-gradient(
+        to bottom,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        to right,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(#007f0c, #004306);
   }
 }
