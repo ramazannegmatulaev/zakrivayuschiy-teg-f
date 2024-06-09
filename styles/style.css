@@ -53,7 +53,6 @@
   font-family: var(--content-font, Arial, sans-serif);
   text-transform: uppercase;
   inline-size: 100%;
-
 }
 
 .header__title {
@@ -275,6 +274,11 @@ label {
   overflow: hidden;
 }
 
+.card__like-button:hover .button__text {
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
 .click__save-button:after {
   content: '';
   background: var(--accent-color);
@@ -313,7 +317,8 @@ label {
   fill: var(--accent-color);
 }
 
-.card__like-button:hover .button__text {
-  mix-blend-mode: difference;
-  z-index: 2;
+@media (width >= 768px) {
+  .header__block-content {
+    block-size: 364px;
+  }
 }

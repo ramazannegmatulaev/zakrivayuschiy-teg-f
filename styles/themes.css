@@ -10,6 +10,7 @@
   --accent-color: #00cc14;
   --accent-background-color: #000;
   --content-text-shadow: #000;
+  --color-text-button: #000;
   --background-gradient-color: repeating-linear-gradient(
       to bottom,
       #000,
@@ -30,6 +31,7 @@
 :root.theme-light {
   --content-title-weight: 700;
   --accent-color: #000;
+  --color-text-button: #fff;
   --accent-background-color: #fff;
   --content-text-shadow: #fff;
   --background-gradient-color: repeating-linear-gradient(
@@ -53,6 +55,7 @@
   :root {
     --content-title-weight: 800;
     --content-text-shadow: #000;
+    --color-text-button: #000;
     --accent-color: #00cc14;
     --accent-background-color: #000;
     --background-gradient-color: repeating-linear-gradient(

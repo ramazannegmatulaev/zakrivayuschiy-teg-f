@@ -7,6 +7,7 @@
   --content-text-shadow: #fff;
   --accent-color: #000;
   --accent-background-color: #fff;
+  --color-text-button: #fff;
   --header-title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --content-img-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
