@@ -94,7 +94,6 @@
   animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
-
 @keyframes arrow {
   from {
     transform: translateX(0);
@@ -106,13 +105,12 @@
 }
 
 .theme-menu__button:hover {
-  opacity: .6;
+  opacity: 0.6;
   transition: ease 0.3s;
-  
 }
 .theme-menu__button:focus {
   outline: none;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus::after {
@@ -120,7 +118,7 @@
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   width: 0%;
   height: 2px;
@@ -133,13 +131,11 @@
   width: 100%;
 }
 
-
 .theme-menu__button:disabled {
   pointer-events: none;
-  opacity: .6;
+  opacity: 0.6;
   transition: ease 0.3s;
 }
-
 
 /* Контент */
 
@@ -228,6 +224,7 @@ label {
   padding: 10px 40px;
   font-size: 14px;
   inline-size: 130px;
+  block-size: 38px;
   cursor: pointer;
   justify-self: end;
   overflow: hidden;
@@ -238,7 +235,7 @@ label {
 }
 
 .card__like-button:after {
-  content: '';
+  content: "";
   background: var(--accent-color);
   position: absolute;
   transform: translateX(-100%);
@@ -253,6 +250,15 @@ label {
 .card__like-button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
   transition: ease 0.3s;
+}
+
+.button__text {
+  position: relative;
+}
+
+.card__like-button:hover .button__text {
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .click__save {
@@ -274,13 +280,8 @@ label {
   overflow: hidden;
 }
 
-.card__like-button:hover .button__text {
-  mix-blend-mode: difference;
-  z-index: 2;
-}
-
 .click__save-button:after {
-  content: '';
+  content: "";
   background: var(--accent-color);
   position: absolute;
   transform: translateX(-100%);
@@ -313,8 +314,42 @@ label {
   text-decoration: none;
 }
 
+.click__save-button:hover .floppy {
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.click__save-button:hover .click__save-button-link {
+  mix-blend-mode: difference;
+  z-index: 2;
+}
 #floppy {
   fill: var(--accent-color);
+}
+
+.like-icon {
+  transition: 0.03s;
+}
+
+.main-body {
+  opacity: 0;
+}
+
+#heart:hover .main-body {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.core {
+  opacity: 0;
+}
+
+.core:hover {
+  opacity: 1;
+}
+
+.sparks {
+  opacity: 0;
 }
 
 @media (width >= 768px) {
