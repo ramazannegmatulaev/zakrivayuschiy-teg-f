@@ -143,6 +143,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 52px;
   margin-block-start: -140px;
 }
 
@@ -187,6 +188,41 @@ label {
   display: block;
   inline-size: 100%;
   object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+/* Фильтры для картинок */
+
+.section-img0 {
+  filter: brightness(200%);
+}
+
+.section-img1 {
+  filter: contrast(40%);
+}
+
+.section-img1-1 {
+  filter: blur(0.3rem);
+}
+
+.section-img2 {
+  filter: opacity(0.8);
+}
+
+.section-img2-2 {
+  filter: grayscale(0.8);
+}
+
+.section-img3 {
+  filter: saturate(50%);
+}
+
+.section-img3-3 {
+  filter: hue-rotate(-90deg);
+}
+
+.section-img4 {
+  filter: sepia(1) contrast(2) brightness(150%);
 }
 
 .section__block {
@@ -219,6 +255,7 @@ label {
   display: flex;
   justify-content: center;
   font-family: var(--content-font);
+  color: var(--color-text-button);
   background-color: transparent;
   border: 2px solid var(--accent-color);
   padding: 10px 40px;
@@ -253,10 +290,8 @@ label {
 }
 
 .button__text {
+  color: var(--color-text-button);
   position: relative;
-}
-
-.card__like-button:hover .button__text {
   mix-blend-mode: difference;
   z-index: 2;
 }
@@ -312,6 +347,10 @@ label {
   font-family: var(--content-font);
   font-size: 14px;
   text-decoration: none;
+  color: var(--color-text-button);
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .click__save-button:hover .floppy {
@@ -323,35 +362,183 @@ label {
   mix-blend-mode: difference;
   z-index: 2;
 }
+
 #floppy {
-  fill: var(--accent-color);
+  fill: var(--color-text-button);
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .like-icon {
+  inline-size: 39px;
+  block-size: 36px;
   transition: 0.03s;
 }
 
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Стилизация для иконки сердца */
+
 .main-body {
   opacity: 0;
-}
-
-#heart:hover .main-body {
   transition: 0.3s;
-  opacity: 1;
-}
-
-.core {
-  opacity: 0;
-}
-
-.core:hover {
-  opacity: 1;
 }
 
 .sparks {
   opacity: 0;
 }
 
+.contour {
+  transition: 0.3s;
+}
+
+.core {
+  opacity: 0;
+  transition-delay: 0.03s;
+  transition: 0.3s;
+}
+
+.card__icon-button:hover .core {
+  transition-delay: 0.03s;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.card__icon-button:hover .main-body {
+  transition-delay: 0.05s;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.card__icon-button:active .core {
+  --core-fill: #ff0000;
+  transition-delay: 0.03s;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.card__icon-button:active .main-body {
+  --main-body-fill: #ff0000;
+  transition-delay: 0.05s;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.card__icon-button:active .contour {
+  --heart-contour: #ff0000;
+  transition-delay: 0.06s;
+  transition: 0.3s;
+}
+
+.like-icon.is-liked:active .contour,
+.like-icon.is-liked:active .main-body,
+.like-icon.is-liked:active .core {
+  animation: scale-icon 0.3s 0.1s ease-in alternate;
+}
+
+.like-icon.is-liked:active .sparks {
+  animation: sparks 0.3s 0.3s ease-in alternate;
+}
+
+.like-icon.is-liked .contour {
+  transform: 0.1s;
+}
+
+@keyframes scale-icon {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#dialog-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: 341px;
+  block-size: 195px;
+  justify-content: center;
+  font-family: var(--content-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  background: var(--accent-background-color);
+  color: var(--accent-color);
+  padding: 30px 42px;
+  gap: 30px;
+  position: fixed;
+  inset: 0;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+#dialog-id::backdrop {
+  background: #000;
+  opacity: 0.75;
+}
+
+.dialog-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  block-size: 63px;
+}
+
+.dialog-info #floppy {
+  inline-size: 39px;
+  aspect-ratio: 1/1;
+}
+
+.dialog-text {
+  inline-size: 198px;
+  line-height: 150%;
+}
+
+.close {
+  border: none;
+  outline: 2px solid var(--accent-color);
+  inline-size: 257px;
+  background: transparent;
+  padding: 12.5px 114.5px;
+  cursor: pointer;
+}
 @media (width >= 768px) {
   .header__block-content {
     block-size: 364px;

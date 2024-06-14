@@ -7,9 +7,10 @@
   --content-text-shadow: #fff;
   --accent-color: #000;
   --accent-background-color: #fff;
-  --color-text-button: #000;
-  --heart-fill: #FF0000;
-  --heart-contour: #FF0000;
+  --color-text-button: #fff;
+  --main-body-fill: #000;
+  --core-fill: #000;
+  --heart-contour: #000;
   --heart-sparks: #FF0000;
   --header-title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
