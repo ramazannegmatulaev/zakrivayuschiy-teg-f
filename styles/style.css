@@ -248,7 +248,6 @@
 .section__text {
   font-size: 18px;
   line-height: 21px;
-  letter-spacing: 0%;
 }
 
 .section__controls {
@@ -438,7 +437,7 @@
 }
 
 .like-icon.is-liked .contour {
-  transform: 0.1s;
+  transition: 0.1s;
 }
 
 .is-liked .heart .main-body,
