@@ -310,6 +310,10 @@
   z-index: 2;
 }
 
+.click__save {
+  margin-block-end: 102px;
+}
+
 .click__save-button {
   position: relative;
   display: flex;
