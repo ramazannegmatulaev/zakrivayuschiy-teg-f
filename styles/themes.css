@@ -14,6 +14,7 @@
   --content-text-shadow: #000;
   --main-body-fill: #00cc14;
   --core-fill: #00cc14;
+  --content-text-weight: 400;
   --heart-contour: #00cc14;
   --background-gradient-color: repeating-linear-gradient(
       to bottom,
@@ -39,6 +40,7 @@
   --heart-contour: #000;
   --core-fill: #000;
   --main-body-fill: #000;
+  --content-text-weight: 400;
   --color-text-button: #fff;
   --accent-background-color: #fff;
   --content-text-shadow: #fff;
@@ -64,6 +66,7 @@
     --content-title-weight: 800;
     --heart-fill: #FF0000;
     --content-text-shadow: #000;
+    --content-text-weight: 400;
     --color-text-button: #00cc14;
     --heart-contour: #00cc14;
     --main-body-fill: #00cc14;
