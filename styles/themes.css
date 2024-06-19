@@ -6,7 +6,7 @@
 */
 
 :root.theme-dark {
-  --content-title-weight: 800;
+  --content-title-weight: 785;
   --heart-fill: #FF0000;
   --accent-color: #00cc14;
   --accent-background-color: #000;
@@ -14,7 +14,7 @@
   --content-text-shadow: #000;
   --main-body-fill: #00cc14;
   --core-fill: #00cc14;
-  --content-text-weight: 400;
+  --content-text-weight: 465;
   --heart-contour: #00cc14;
   --background-gradient-color: repeating-linear-gradient(
       to bottom,
@@ -63,10 +63,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --content-title-weight: 800;
+    --content-title-weight: 785;
     --heart-fill: #FF0000;
     --content-text-shadow: #000;
-    --content-text-weight: 400;
+    --content-text-weight: 465;
     --color-text-button: #00cc14;
     --heart-contour: #00cc14;
     --main-body-fill: #00cc14;
