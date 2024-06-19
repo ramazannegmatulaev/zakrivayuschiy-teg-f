@@ -24,13 +24,14 @@
   background-color: var(--accent-background-color);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-variation-settings: var(--content-text-weight);
   background-size: cover;
 }
 
 .floppy {
-  inline-size: 39px;
-  block-size: 39px;
+  fill: var(--color-text-button);
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .header {
@@ -149,7 +150,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 52px;
+  /* gap: 52px; */
 }
 
 .section {
@@ -158,6 +159,10 @@
   flex-direction: column;
   align-items: center;
   border: 2px solid var(--accent-color);
+}
+
+.section:not(:first-of-type) {
+  margin-block-start: 52px;
 }
 
 .section-box {
@@ -204,35 +209,35 @@
 
 /* Фильтры для картинок */
 
-.section-img-brightness {
+.img-brightness {
   filter: brightness(200%);
 }
 
-.section-img-contrast {
-  filter: contrast(40%);
+.img-contrast {
+  filter: contrast(240%);
 }
 
-.section-img-blur {
+.img-blur {
   filter: blur(0.3rem);
 }
 
-.section-img-opacity {
+.img-opacity {
   filter: opacity(0.8);
 }
 
-.section-img-grayscale {
+.img-grayscale {
   filter: grayscale(0.8);
 }
 
-.section-img-saturate {
+.img-saturate {
   filter: saturate(50%);
 }
 
-.section-img-hue-rotate{
+.img-hue-rotate {
   filter: hue-rotate(-90deg);
 }
 
-.section-img-difference {
+.img-difference {
   filter: sepia(1) contrast(2) brightness(150%);
 }
 
@@ -248,6 +253,7 @@
 .section__text {
   font-size: 18px;
   line-height: 21px;
+  font-variation-settings: "wght" var(--content-text-weight);
 }
 
 .section__controls {
@@ -267,7 +273,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  font-family: var(--content-font), Arial, sans-serif;
+  font-family: var(--content-font), fantasy, sans-serif;
   color: var(--color-text-button);
   background-color: transparent;
   border: 2px solid var(--accent-color);
@@ -311,6 +317,7 @@
 
 .click__save {
   margin-block-end: 102px;
+  margin-block-start: 58px;
 }
 
 .click__save-button {
@@ -335,7 +342,7 @@
 }
 
 .click__save-button-link {
-  font-family: var(--content-font), Arial, sans-serif;
+  font-family: var(--content-font), fantasy, sans-serif;
   font-size: 14px;
   text-decoration: none;
   color: var(--color-text-button);
@@ -354,12 +361,6 @@
   z-index: 2;
 }
 
-#floppy {
-  fill: var(--color-text-button);
-  position: relative;
-  mix-blend-mode: difference;
-  z-index: 2;
-}
 
 .like-icon {
   inline-size: 39px;
@@ -475,7 +476,7 @@
   align-items: center;
   inline-size: 341px;
   justify-content: center;
-  font-family: var(--content-font), Arial, sans-serif;
+  font-family: var(--content-font), fantasy, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   background: var(--accent-background-color);
@@ -503,9 +504,9 @@ dialog:not([open]) {
   gap: 20px;
 }
 
-.dialog-info #floppy {
+.dialog-info .floppy {
   inline-size: 39px;
-  aspect-ratio: 1/1;
+  block-size: 39px;
 }
 
 .dialog-text {
@@ -560,7 +561,7 @@ dialog:not([open]) {
 
   .section__block {
     padding-block-start: 30px;
-    gap: 27px;
+    gap: 26px;
   }
   
   .click__save-button {
