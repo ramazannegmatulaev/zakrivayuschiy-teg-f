@@ -150,7 +150,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 52px; */
 }
 
 .section {
@@ -162,7 +161,7 @@
 }
 
 .section:not(:first-of-type) {
-  margin-block-start: 52px;
+  margin-block-start: 53px;
 }
 
 .section-box {
@@ -317,7 +316,7 @@
 
 .click__save {
   margin-block-end: 102px;
-  margin-block-start: 58px;
+  margin-block-start: 53px;
 }
 
 .click__save-button {
@@ -394,7 +393,7 @@
 .core {
   opacity: 0;
   transition-delay: 0.03s;
-  transition: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .card__icon-button:hover .core {
@@ -404,7 +403,7 @@
 
 .card__icon-button:hover .main-body {
   transition-delay: 0.05s;
-  transition: 0.3s;
+  transition-duration: 0.3s;
   opacity: 1;
 }
 
@@ -424,7 +423,7 @@
 .card__icon-button:active .contour {
   --heart-contour: #ff0000;
   transition-delay: 0.06s;
-  transition: 0.3s;
+  transition-duration: 0.3s;
 } 
 
 .like-icon.is-liked .sparks {
@@ -438,7 +437,8 @@
 }
 
 .like-icon.is-liked .contour {
-  transition: 0.1s;
+  transition-delay: 0.06s;
+  transition-duration: 0.1s;
 }
 
 .is-liked .heart .main-body,
@@ -476,10 +476,10 @@
   align-items: center;
   inline-size: 341px;
   justify-content: center;
-  font-family: var(--content-font), fantasy, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   background: var(--accent-background-color);
+  font-family: var(--content-font), fantasy, sans-serif;
   color: var(--accent-color);
   padding: 30px 42px;
   gap: 30px;
@@ -504,13 +504,14 @@ dialog:not([open]) {
   gap: 20px;
 }
 
-.dialog-info .floppy {
+.dialog-info #floppy {
+  display: block;
   inline-size: 39px;
   block-size: 39px;
 }
 
 .dialog-text {
-  inline-size: 198px;
+  inline-size: 179px;
   line-height: 150%;
 }
 
