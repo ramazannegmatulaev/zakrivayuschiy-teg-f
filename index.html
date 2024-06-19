@@ -19,10 +19,8 @@
   <body class="page">
     <header class="header">
       <div class="header__block-content">
-        <a class="header__title">
-          &lt;/HTML&gt;
-        </a>
-    <h1 class="header__subtitle">закрывающий тег</h1>
+        <a class="header__title"> &lt;/HTML&gt; </a>
+        <h1 class="header__subtitle">закрывающий тег</h1>
         <nav class="theme-menu header__theme-menu">
           <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
           <ul class="theme-menu__list">
@@ -533,15 +531,18 @@
             <use href="svg/floppy.svg#floppy"></use>
           </svg>
           <span class="click__save-button-link" aria-hidden="true"
-            >Сохранить на память</span>
+            >Сохранить на память</span
+          >
         </button>
       </div>
     </main>
     <dialog id="dialog-id">
       <div class="dialog-info">
-        <svg viewBox="0 0 39 39">
-          <use href="svg/floppy.svg#floppy" class="floppy"></use>
-        </svg>
+        <div class="dialog-floppy">
+          <svg viewBox="0 0 39 39">
+            <use href="svg/floppy.svg#floppy" class="floppy"></use>
+          </svg>
+        </div>
         <p class="dialog-text">Вставьте дискету, чтобы продолжить</p>
       </div>
       <button
