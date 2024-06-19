@@ -501,17 +501,20 @@ dialog:not([open]) {
   display: flex;
   justify-content: center;
   align-items: center;
+  inline-size: 257px;
   gap: 20px;
 }
 
-.dialog-info #floppy {
-  display: block;
+.dialog-floppy {
+  inline-size: 94px;
+}
+
+.dialog-floppy .floppy {
   inline-size: 39px;
   block-size: 39px;
 }
 
 .dialog-text {
-  inline-size: 179px;
   line-height: 150%;
 }
 
