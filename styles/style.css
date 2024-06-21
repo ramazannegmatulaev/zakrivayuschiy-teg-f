@@ -367,13 +367,27 @@
   transition: 0.03s;
 }
 
+.heart:focus {
+   outline: none;
+}
+
 .card__icon-button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  outline: 2px solid transparent;
 }
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  transition: 0.3s ease;
+} 
 
 /* Стилизация для иконки сердца */
 
@@ -395,6 +409,7 @@
   transition-delay: 0.03s;
   transition-duration: 0.3s;
 }
+
 
 .card__icon-button:hover .core {
   transition: 0.3s;
