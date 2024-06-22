@@ -38,7 +38,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-block-size: 527px;
   block-size: 100%;
 }
 
@@ -48,6 +47,8 @@
   flex-direction: column;
   align-items: center;
   min-inline-size: 371px;
+  margin-block-start: 102px;
+  margin-block-end: 96px;
   max-inline-size: 698px;
   padding: 120px 14px 25px;
   border: 2px solid var(--accent-color);
@@ -110,7 +111,7 @@
 
 .theme-menu__list {
   transition: ease 0.3s;
-} 
+}
 
 .theme-menu__button:hover {
   opacity: 0.6;
@@ -198,13 +199,16 @@
   z-index: 2;
 }
 
-@supports((text-stroke: 1px var(--content-text-shadow)) or (-webkit-text-stroke: 1px var(--content-text-shadow))) {
+@supports (
+  (text-stroke: 1px var(--content-text-shadow)) or
+    (-webkit-text-stroke: 1px var(--content-text-shadow))
+) {
   .section__info label {
-      -webkit-text-stroke: 1px var(--content-text-shadow);
-      text-stroke: 1px var(--content-text-shadow);
-      text-shadow: none;
+    -webkit-text-stroke: 1px var(--content-text-shadow);
+    text-stroke: 1px var(--content-text-shadow);
+    text-shadow: none;
   }
-} 
+}
 
 .section__img {
   display: block;
@@ -315,6 +319,7 @@
 
 .button-content:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: 0.3s ease;
 }
 
 .button__text {
@@ -326,7 +331,7 @@
 
 .click__save {
   margin-block-end: 102px;
-  margin-block-start: 53px;
+  margin-block-start: 52px;
 }
 
 .click__save-button {
@@ -370,7 +375,6 @@
   z-index: 2;
 }
 
-
 .like-icon {
   inline-size: 39px;
   block-size: 36px;
@@ -378,7 +382,7 @@
 }
 
 .heart:focus {
-   outline: none;
+  outline: none;
 }
 
 .card__icon-button {
@@ -388,6 +392,7 @@
   margin: 0;
   padding: 0;
   outline: 2px solid transparent;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -395,8 +400,7 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color); 
-  transition: 0.3s ease;
+  outline: 2px solid var(--accent-color);
 }
 
 /* Стилизация для иконки сердца */
@@ -418,8 +422,8 @@
   opacity: 0;
   transition-delay: 0.03s;
   transition-duration: 0.3s;
+  animation-timing-function: linear;
 }
-
 
 .card__icon-button:hover .core {
   transition: 0.3s linear;
@@ -443,51 +447,66 @@
   --main-body-fill: #ff0000;
   transition-delay: 0.05s;
   animation-timing-function: linear;
-  transition: 0.3s;
+  transition-duration: 0.3s;
   opacity: 1;
 }
 
+/* Анимации при клике */
+
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s 0.3s linear alternate;
-} 
+}
 
 .like-icon.is-liked .contour,
 .like-icon.is-liked .main-body,
 .like-icon.is-liked .core {
-  animation: scale-icon 0.3s 0.1s linear alternate;
+  animation: scale-icon 0.3s 0.1s ease-in alternate;
+  transform-origin: center center;
 }
 
 .like-icon.is-liked .contour {
-  transition-delay: 0.06s;
-  transition-duration: 0.1s;
-  animation-timing-function: linear;
+  fill: #ff0000;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .is-liked .heart .main-body,
 .is-liked .heart .core,
-.like-icon.is-liked .contour
- {
+.like-icon.is-liked .contour {
   opacity: 1;
   fill: #ff0000;
 }
 
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .core {
+  fill: #ff0000;
+  transition: fill 0.3s linear 0.05s;
+}
+
 @keyframes scale-icon {
-  0% {
+  from {
     transform: scale(1);
   }
 
-  100% {
-    transform: scale(1.1);
+  50% {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
 
 @keyframes sparks {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  50% {
     opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 
@@ -505,6 +524,7 @@
   padding: 30px 42px;
   gap: 30px;
   position: fixed;
+  overflow-x: hidden;
   inset: 0;
 }
 
@@ -556,21 +576,13 @@ dialog:not([open]) {
   z-index: 2;
 }
 
-
 @media (width >= 1024px) {
-  .header {
-    margin-block-start: 20px;
-  }
   .header__block-content {
-    padding: 140px 120.5px 25px;
+    padding: 135px 120.5px 20px;
   }
-  
+
   .header__theme-menu {
     margin-block-start: 25px;
-  }
-
-  .content {
-    margin-block-start: 20px;
   }
 
   .section__info label {
@@ -582,9 +594,18 @@ dialog:not([open]) {
     padding-block-start: 30px;
     gap: 26px;
   }
-  
+
+  #dialog-id {
+    inline-size: 357px;
+  }
+
   .click__save-button {
     flex-direction: row;
-    padding: 10px 17px;
+    padding: 15px 20px;
+  }
+
+  .click__save-button .floppy {
+    inline-size: 19px;
+    block-size: 19px;
   }
 }
