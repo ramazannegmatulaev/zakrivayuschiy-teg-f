@@ -297,7 +297,7 @@
 }
 
 .button-content {
-  transition: linear 0.3s;
+  transition: 0.3s ease;
 }
 
 .button-content:focus {
@@ -319,7 +319,6 @@
 
 .button-content:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .button__text {
@@ -476,10 +475,14 @@
   fill: #ff0000;
 }
 
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .core {
+.like-icon.is-liked .main-body {
   fill: #ff0000;
   transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: #ff0000;
+  transition: fill 0.3s linear;
 }
 
 @keyframes scale-icon {
@@ -521,10 +524,9 @@
   background: var(--accent-background-color);
   font-family: var(--content-font), fantasy, sans-serif;
   color: var(--accent-color);
-  padding: 30px 42px;
+  padding: 30px 40px;
   gap: 30px;
   position: fixed;
-  overflow-x: hidden;
   inset: 0;
 }
 
